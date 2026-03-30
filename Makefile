@@ -1,24 +1,40 @@
-PYTHON ?= python3
-VENV := .venv
-
-.PHONY: venv reqs setup pre-commit-setup lint
-
-venv:
-	uv venv $(VENV) --python 3.12
-	@echo "Activate with: source $(VENV)/bin/activate"
-
-reqs: | $(VENV)
-	uv pip install -r requirements.txt --python $(VENV)/bin/python
-
-$(VENV):
-	$(MAKE) venv
-
 pre-commit-setup:
-	brew install ruff pre-commit 2>/dev/null || true
 	pre-commit install
 
-setup: venv reqs pre-commit-setup
+node-setup:
+	make pre-commit-setup
+	chmod +x ./scripts/node-setup.sh && \
+	./scripts/node-setup.sh
+	npm install
+
+setup: node-setup
+
+dev:
+	npm run dev
+
+build:
+	npm run build
+
+preview:
+	npm run preview
+
+test:
+	npm run test
 
 lint:
-	ruff check cascade/
-	ruff format --check cascade/
+	npm run lint
+
+generate-data:
+	npm run generate-data
+
+app/up:
+	@echo "Starting application..."
+	docker compose up -d --build
+
+app/down:
+	docker compose down
+
+app/restart:
+	docker compose restart
+
+.PHONY: pre-commit-setup node-setup setup dev build preview test lint generate-data app/up app/down app/restart

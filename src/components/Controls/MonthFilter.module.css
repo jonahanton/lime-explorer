@@ -1,0 +1,17 @@
+.select {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-pill);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.select:hover,
+.select:focus {
+  border-color: var(--accent);
+}

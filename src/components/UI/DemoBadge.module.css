@@ -1,0 +1,11 @@
+.badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 2px var(--space-sm);
+  border-radius: var(--radius-pill);
+  background: var(--demo-badge);
+  color: white;
+  text-transform: uppercase;
+}
