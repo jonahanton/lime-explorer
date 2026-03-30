@@ -1,0 +1,38 @@
+repos:
+- repo: local
+  hooks:
+  - id: prettier
+    name: Prettier
+    entry: npm run prettier
+    language: system
+    pass_filenames: false
+    always_run: true
+    stages: [commit]
+
+  - id: lint
+    name: ESLint
+    entry: npm run lint
+    language: system
+    pass_filenames: false
+    always_run: true
+    stages: [commit]
+
+  - id: npm-audit
+    name: npm audit
+    entry: npm audit --audit-level=moderate
+    language: system
+    pass_filenames: false
+    always_run: true
+    stages: [commit]
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.1.0
+  hooks:
+  - id: check-added-large-files
+    args: ['--maxkb=1000']
+  - id: check-yaml
+
+- repo: https://github.com/Yelp/detect-secrets
+  rev: v1.4.0
+  hooks:
+  - id: detect-secrets

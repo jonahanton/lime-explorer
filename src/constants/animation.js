@@ -1,0 +1,11 @@
+export const TOTAL_PLAYBACK_MS = 12000;
+export const SCRUB_STEP = 0.02;
+export const PARTICLE_RADIUS = 6;
+export const GLOW_RADIUS = 20;
+export const ARC_STEPS = 32;
+export const ARC_LINE_WIDTH = 2;
+export const ARC_GLOW_WIDTH = 6;
+export const ARC_CURVATURE = 0.15;
+export const IDLE_ARC_OPACITY = 0.6;
+export const ACTIVE_ARC_OPACITY = 1.0;
+export const FADED_ARC_OPACITY = 0.3;

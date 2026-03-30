@@ -1,23 +1,26 @@
 # Dependencies
-/node_modules
-**/.venv/
-.venv-temp/
+node_modules/
 
-# Byte-compiled / optimised / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# Build output
+dist/
 
-# Environment variables
+# Testing
+coverage/
+
+# Environment
 .env
 .env*.local
 
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
 # OS
 .DS_Store
+Thumbs.db
 
 # IDE
 .vscode/
-
-# Data artefacts
-*.csv
-*.ipynb
+.idea/
