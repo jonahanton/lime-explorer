@@ -1,0 +1,23 @@
+# Dependencies
+/node_modules
+**/.venv/
+.venv-temp/
+
+# Byte-compiled / optimised / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+.env*.local
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+
+# Data artefacts
+*.csv
+*.ipynb
